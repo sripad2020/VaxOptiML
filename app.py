@@ -46,7 +46,8 @@ text2=['To anticipate epitopes for cancer immunotherapy, our integrated pipeline
 def main():
     if page == "Home":
         text_input = st.text_input("Enter text sequence :").upper()
-        prediction_option = st.radio("Select prediction type:", ("MHC-1", "MHC-2", "BOTH"))
+        text_input = text_input.replace(" ", " ")
+        prediction_option = st.radio("Note - Remove the spaces from the amino acid sequnece if any:", ("MHC-1", "MHC-2", "BOTH"))
         if st.button("Predict"):
             if prediction_option == "MHC-1" and text_input:
                 progress_bar = st.progress(0)
@@ -54,9 +55,9 @@ def main():
                 for i in range(6):
                     time.sleep(9)
                     progress_bar.progress((i + 1) * 100 // len(text))
-                    status_text.text(f'**⏳ Countdown: {((i + 1) * 100 // len(text))}% ***')
+                    status_text.text(f'**⏳ Processing: {((i + 1) * 100 // len(text))}% ***')
                     st.write(f"[{i + 1}] ", text[i])
-                status_text.text('# 💥 **Boom!** 💥')
+                status_text.text('# 💥 **Analysis Completed!** 💥')
 
                 protein_sequence = text_input
 
