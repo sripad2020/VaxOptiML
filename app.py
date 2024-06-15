@@ -45,7 +45,7 @@ text2=['To anticipate epitopes for cancer immunotherapy, our integrated pipeline
 
 def main():
     if page == "Home":
-        text_input = st.text_input("Enter text sequence :").upper()
+        text_input = st.text_input("Enter Protein/Tumor antigen sequence :").upper()
         text_input = text_input.replace(" ", " ")
         prediction_option = st.radio("Note - Remove the spaces from the amino acid sequnece if any:", ("MHC-1", "MHC-2", "BOTH"))
         if st.button("Predict"):
