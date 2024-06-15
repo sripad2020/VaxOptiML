@@ -1,1 +1,2 @@
 extratree_tar_mhc1.pkl filter=lfs diff=lfs merge=lfs -text
+extra_tree_hla_mhc1.pkl filter=lfs diff=lfs merge=lfs -text
